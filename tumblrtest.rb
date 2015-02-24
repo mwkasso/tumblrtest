@@ -1,7 +1,7 @@
 require "selenium-webdriver"
 
 class Tumblrtest
-  @browser
+  attr_accessor :browser
   #Loads firefox and navigates to tumblr website
   def load
     @browser = Selenium::WebDriver.for :firefox
@@ -29,11 +29,11 @@ class Tumblrtest
     textbox.send_keys "This is a test"
     post = @browser.find_element class: "create_post_button"
     post.click
-    @browser.manage.timeouts.implicit_wait=(10)
-    titletest = @browser.find_element class: "post_title"
-    return titletest.text == "This is a test"
+    
+    # profile_button = browser.find_element id: "post_controls_avatar"
+    # profile_button.click
   end
-
+   
   # Deletes the post
   def delete
     option = @browser.find_element class: "creator"
