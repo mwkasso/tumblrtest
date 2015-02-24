@@ -29,9 +29,6 @@ class Tumblrtest
     textbox.send_keys "This is a test"
     post = @browser.find_element class: "create_post_button"
     post.click
-    
-    # profile_button = browser.find_element id: "post_controls_avatar"
-    # profile_button.click
   end
    
   # Deletes the post
